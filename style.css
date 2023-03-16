@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box !important;
+}
+
+.div-card {
+    width: 360px !important;
+}
+
+.img-fit {
+    width: 360px;
+    height: 260px;
+    object-fit: cover;
+}
