@@ -25,15 +25,16 @@
                         <a class="nav-link" href="./carrito.html">Carrito</a>
                     </li>
                     <form class="d-flex" role="search">
-                        <input v-model="text" v-on:keyup="filterData()" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+                        <input v-model="text" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
                         <fieldset v-if="categories" v-for="each in categories" class="d-flex justify-content-center align-items-center f-checks">
-                            <input v-model="checks" v-on:change="filterData()" class="m-1 s-checks" type="checkbox" :name="each" :id="each" :value="each">
+                            <input v-model="checks" class="m-1 s-checks" type="checkbox" :name="each" :id="each" :value="each">
                             <label :for="each">{{each.toUpperCase()}}</label>
                         </fieldset>
                     </form>
                 </div>
             </div>
         </nav>
+        {{filterData}} <!-- la interpolacion de los metodos computados puede ir en cualquier parte mientras esté adentro del id=app -->
         <h1 class="m-2">{{name}}</h1>
         <h4 class="m-2">{{description}}</h4>
         <h2 class="m-2">{{subtitle}}</h2>
@@ -56,6 +57,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="./vue.js"></script>
-    <script src="./app.js"></script>
+    <script src="./app_computed.js"></script>
 </body>
 </html>

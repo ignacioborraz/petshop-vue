@@ -1,0 +1,27 @@
+definir nuevos estados para checks y text
+definir los inputs que van a modificar esos estados con v-model
+
+OPCION 1
+en methods definir una funcion para filtrar en base a esos estados (modificar de la funcion de JS)
+filterData() {
+    this.filteredProducts = this.products.filter( product => (this.checks.includes(product.categoria) || this.checks.length === 0) && product.producto.toLowerCase().includes(this.text.toLowerCase()))
+}
+definir los eventos con v-on
+
+
+OPCION 2
+en computed definir una funcion para filtrar en base a esos estados (modificar de la funcion de JS)
+filterData() {
+    this.filteredProducts = this.products.filter( product => (this.checks.includes(product.categoria) || this.checks.length === 0) && product.producto.toLowerCase().includes(this.text.toLowerCase()))
+}
+invocar el método en el html
+
+
+
+CARD para v-else
+<div v-else="filteredProducts.length" class="card m-1" style="width: 360px"> <!-- card que vamos a iterar -->
+    <img src="https://i1.sndcdn.com/avatars-CBHm1GPyWVXctJAz-B0ySmg-t240x240.jpg" class="card-img-top img-fit" v-bind:alt="notfound"> <!-- imagen que vamos a bindear -->
+    <div class="card-body">
+        <h5 class="card-title">NO HAY COINCIDENCIAS</h5> <!-- propiedades a interpolar -->
+    </div>
+</div>
