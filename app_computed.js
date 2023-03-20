@@ -58,7 +58,9 @@ const app = createApp({
             } catch(error) {
                 console.log(error)
             }
-        },
+        }
+    },
+    computed: {     /* objeto con todos los métodos que se ejectuan automaticamente cuando CAMBIA un estado */
         filterData() {
             //console.log(this.text)
             //console.log(this.checks)
@@ -67,8 +69,6 @@ const app = createApp({
             })
             //console.log(filteredData)
         }
-    },
-    computed: {     /* objeto con todos los métodos que se ejectuan automaticamente cuando CAMBIA un estado */
     }
 })
 
