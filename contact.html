@@ -33,20 +33,20 @@
         <h1 class="m-2">{{name}}</h1>
         <h4 class="m-2">{{description}}</h4>
         <h2 class="m-2">{{subtitle}}</h2>
-        <form class="contact-form">
+        <form class="contact-form" v-on:submit.prevent="captureData"> <!-- el prevent va en el form, no en el evento del button -->
             <fieldset>
                 <label class="contact-label" for="nombre_id">nombre</label>
-                <input class="contact-input" type="text" placeholder="escribi el nombre de tu mascota" name="nombre" id="nombre_id">    
+                <input v-model="nombre" class="contact-input" type="text" placeholder="escribi el nombre de tu mascota" name="nombre" id="nombre_id">    
             </fieldset>                
             <fieldset>
                 <label class="contact-label" for="tiene_que_ser_igual_al_id">edad</label>
-                <input class="contact-input" type="number" min="0" max="50" value="10" name="edad" id="tiene_que_ser_igual_al_id">    
+                <input v-model="edad" class="contact-input" type="number" min="0" max="50" name="edad" id="tiene_que_ser_igual_al_id">    
             </fieldset>
             <fieldset><!-- fecha -->
                 <label class="contact-label" for="date">fecha</label>
-                <input class="contact-input" type="date" name="fecha" id="date">
+                <input v-model="fecha" class="contact-input" type="date" name="fecha" id="date">
             </fieldset><!-- animal: con select -->
-            <select name="animal" id="animalito"> <!-- multiple como atributo para seleccionar varias con CTRL -->
+            <select v-model="animal" name="animal" id="animalito"> <!-- multiple como atributo para seleccionar varias con CTRL -->
                 <option value="dog">perro</option>
                 <option value="cat">gato</option>
                 <option value="turtle">tortuga</option>
@@ -55,28 +55,28 @@
                 <option value="monkey">mono</option>
             </select>
             <fieldset><!-- comida con checks -->
-                <input class='selectorchecks' type="checkbox" name="comida" id="zanahoria" value="carrot">
+                <input v-model="comida" class='selectorchecks' type="checkbox" name="comida" id="zanahoria" value="carrot">
                 <label class="contact-label" for="zanahoria">zanahoria</label>
-                <input class='selectorchecks' type="checkbox" name="comida" id="tomate" value="tomato">
+                <input v-model="comida" class='selectorchecks' type="checkbox" name="comida" id="tomate" value="tomato">
                 <label class="contact-label" for="tomate">tomate</label>
-                <input class='selectorchecks' type="checkbox" name="comida" id="banana" value="banana">
+                <input v-model="comida" class='selectorchecks' type="checkbox" name="comida" id="banana" value="banana">
                 <label class="contact-label" for="banana">banana</label>
-                <input class='selectorchecks' type="checkbox" name="comida" id="lechuga" value="lettuce">
+                <input v-model="comida" class='selectorchecks' type="checkbox" name="comida" id="lechuga" value="lettuce">
                 <label class="contact-label" for="lechuga">lechuga</label>
             </fieldset>
             <fieldset><!-- suscripcion con radio -->
-                <input type="radio" name="suscription" value="yes" id="suscription_yes">
+                <input v-model="suscripcion" type="radio" name="suscription" value="yes" id="suscription_yes">
                 <label class="contact-label" for="suscription_yes">suscribir</label>
-                <input type="radio" name="suscription" value="no" id="suscription_no">
+                <input v-model="suscripcion" type="radio" name="suscription" value="no" id="suscription_no">
                 <label class="contact-label" for="suscription_no">no suscribir</label>
-                <input type="radio" name="suscription" value="maybe" id="suscription_maybe">
+                <input v-model="suscripcion" type="radio" name="suscription" value="maybe" id="suscription_maybe">
                 <label class="contact-label" for="suscription_maybe">tal vez</label>
             </fieldset>
-            <input id="form-button" class="contact-button" type="submit" value="enviar">
+            <input type="submit" id="form-button" class="contact-button" value="enviar">
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="./vue.js"></script>
+    <script src="./scripts/vue.js"></script>
     <script src="./scripts/contact.js"></script>
 </body>
 </html>

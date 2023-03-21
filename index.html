@@ -46,7 +46,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{each.producto}}</h5> <!-- propiedades a interpolar -->
                     <p class="card-text">$ {{each.precio}}</p> <!-- propiedades a interpolar -->
-                    <a href="#" class="btn btn-primary">Go somewhere</a> <!-- evento para detalle -->
+                    <a v-bind:href="'./details.html?product_id='+each._id" class="btn btn-primary">+info</a> <!-- evento para detalle -->
                 </div>
             </div>
             <div v-else="filteredData.length" class="card m-1" style="width: 360px"> <!-- card que vamos a iterar -->
