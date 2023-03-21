@@ -11,3 +11,9 @@
     height: 260px;
     object-fit: cover;
 }
+
+.img-fit-details {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
