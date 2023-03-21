@@ -1,0 +1,21 @@
+PAGINA DE DETALLE
+definir los estados que necesite en data
+definir links dinamicos con v-bind
+capturar el params (modificar de la funcion de JS)
+
+CARD para v-if
+<div v-if="product"class="card m-1" style="width: 720px">
+    <img v-bind:src="product.imagen" class="card-img-top img-fit" v-bind:alt="product.producto"> <!-- imagen que vamos a bindear -->
+    <div class="card-body">
+        <h5 class="card-title">{{product.producto}}</h5> <!-- propiedades a interpolar -->
+        <p class="card-text">$ {{product.precio}} - stock: {{product.stock}}</p> <!-- propiedades a interpolar -->
+        <p class="card-text">$ {{product.descripcion}}</p> <!-- propiedades a interpolar -->
+    </div>
+</div>
+
+
+
+PAGINA DE CONTACTO
+definir los estados que necesite en data
+definir los inputs que van a modificar esos estados con v-model
+definir la funcion necesaria para mostrar los datos en un alert
