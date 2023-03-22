@@ -1,0 +1,14 @@
+agregar estado al data
+
+definir la funcion para agregar al storage (primero ver en consola)
+
+agregar boton de agregar/quitar con v-if v-else
+<label class="btn btn-warning me-2">
+    agregar
+    <input class="d-none" type="checkbox" v-bind:id="each._id" v-bind:value="each._id" />
+</label>
+<label class="btn btn-danger me-2">
+    quitar
+    <input class="d-none" type="checkbox" v-bind:id="each._id" v-bind:value="each._id" />
+</label>
+

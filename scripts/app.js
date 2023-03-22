@@ -12,7 +12,8 @@ const app = createApp({
             categories: [],
             checks: [],
             text: "",
-            filteredData: []
+            filteredData: [],
+            cart: []
         }
     },
     created() {     /* hook con las funciones que se ejecutan luego de cargar las variables de estado */
@@ -20,6 +21,7 @@ const app = createApp({
         //this.fetchApi()
         //this.getCategories()
         this.fetchOnlyOne()
+        this.obtainStorage()
     },
     methods: {      /* objeto con todos los métodos que necesita la app (fetch/filter/etc) */
         /* defino funcion */
@@ -66,6 +68,22 @@ const app = createApp({
                 return (each.producto.toLowerCase().includes(this.text.toLowerCase())) && (this.checks.length === 0 || this.checks.includes(each.categoria))
             })
             //console.log(filteredData)
+        },
+        manageProducts() {
+            localStorage.setItem(
+                'cart', // clave para guardar los datos
+                JSON.stringify(this.cart) // valores a guardar
+            )
+        },
+        obtainStorage() {
+            //let datosDelStorage = localStorage.cart //version no tan copada (no me acuerdo en que navegador no funciona)
+            let datosDelStorage = localStorage.getItem('cart')
+            console.log(datosDelStorage) //el dato recien devuelto del storage es de texto plano y es necesario convertirlo en objeto de js
+            if (datosDelStorage) {
+                let datosTransformadosaJs = JSON.parse(datosDelStorage)
+                console.log(datosTransformadosaJs)
+                this.cart = datosTransformadosaJs
+            }
         }
     },
     computed: {     /* objeto con todos los métodos que se ejectuan automaticamente cuando CAMBIA un estado */
