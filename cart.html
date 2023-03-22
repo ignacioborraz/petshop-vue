@@ -46,14 +46,6 @@
                 <div class="card-body">
                     <h5 class="card-title">{{each.producto}}</h5> <!-- propiedades a interpolar -->
                     <p class="card-text">$ {{each.precio}}</p> <!-- propiedades a interpolar -->
-                    <label v-if="!cart.includes(each._id)" class="btn btn-warning me-2" v-on:click="manageProducts">
-                        agregar
-                        <input v-model="cart" class="d-none" type="checkbox" v-bind:id="each._id" v-bind:value="each._id" />
-                    </label>
-                    <label v-else="!cart.includes(each._id)" class="btn btn-danger me-2" v-on:click="manageProducts">
-                        quitar
-                        <input v-model="cart" class="d-none" type="checkbox" v-bind:id="each._id" v-bind:value="each._id" />
-                    </label>
                     <a v-bind:href="'./details.html?product_id='+each._id" class="btn btn-primary">+info</a> <!-- evento para detalle -->
                 </div>
             </div>
